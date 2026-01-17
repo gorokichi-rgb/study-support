@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>学習管理</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>学習管理</h1>
+
+<!-- 科目タブ -->
+<div class="tabs" id="tabs"></div>
+
+<!-- 到達度フィルタ -->
+<div class="levels">
+  <button onclick="setLevel('all')" class="level-btn active" id="lv-all">すべて</button>
+  <button onclick="setLevel('perfect')" class="level-btn" id="lv-perfect">完璧</button>
+  <button onclick="setLevel('almost')" class="level-btn" id="lv-almost">あと少し</button>
+  <button onclick="setLevel('yet')" class="level-btn" id="lv-yet">まだ</button>
+</div>
+
+<!-- 追加フォーム -->
+<div class="form">
+  <input id="titleInput" placeholder="単元名">
+  <select id="subjectInput"></select>
+  <select id="levelInput">
+    <option value="perfect">完璧</option>
+    <option value="almost">あと少し</option>
+    <option value="yet">まだ</option>
+  </select>
+  <button class="add-btn" onclick="addItem()">追加</button>
+</div>
+
+<!-- 一覧 -->
+<div id="list"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
