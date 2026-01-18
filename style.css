@@ -1,0 +1,205 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 10px;
+  background: #fafafa;
+}
+
+/* ===== 科目タブ ===== */
+.tabs {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  gap: 6px;
+  padding: 6px 0;
+  background: white;
+  overflow-x: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tab.active {
+  background: #9fb8a0;
+  color: white;
+}
+
+/* ===== 到達度フィルタ ===== */
+.levels {
+  margin: 8px 0;
+}
+
+.level-btn {
+  margin-right: 6px;
+  padding: 4px 12px;
+  border-radius: 14px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+}
+
+.level-btn.active {
+  background: #9fb8a0;
+  color: white;
+}
+
+/* ===== 追加フォーム ===== */
+.form {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.form input,
+.form select {
+  padding: 6px;
+  font-size: 14px;
+}
+
+.add-btn {
+  background: #9fb8a0;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== カード ===== */
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding-left: 28px; /* 付箋分の余白 */
+  min-height: 48px;
+  border-radius: 6px;
+}
+
+/* ===== 付箋（左の色帯） ===== */
+.level-bar {
+  position: absolute;
+  left: -16px;
+  top: 0;
+  bottom: 0;
+  width: 24px;                 /* 太め */
+  border-radius: 10px 0 0 10px; /* 角丸 */
+}
+
+/* 到達度ごとの色（影なし・一色） */
+.item.perfect .level-bar {
+  background: #7a6c8f;
+}
+
+.item.almost .level-bar {
+  background: #c3b6d6;
+}
+
+.item.yet .level-bar {
+  background: #f0f0f0;
+  border-right: 1px solid #ddd;
+}
+
+/* ===== タイトル ===== */
+.title {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* ===== メニューボタン ===== */
+.menu-btn {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* ===== 編集メニュー ===== */
+.menu {
+  position: absolute;
+  right: 6px;
+  top: 42px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  display: none;
+  z-index: 10;
+}
+
+.menu button {
+  width: 100%;
+  border: none;
+  background: white;
+  padding: 8px 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background: #eee;
+}
+
+/* ===== スマホ向け調整 ===== */
+@media (max-width: 480px) {
+
+  /* 科目タブ */
+  .tab {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  /* 追加フォーム（横一列のまま大きく） */
+  .form input,
+  .form select,
+  .add-btn {
+    font-size: 16px;
+    height: 44px;
+  }
+
+  .form input {
+    flex: 2;
+  }
+
+  .form select {
+    flex: 1.2;
+  }
+
+  .add-btn {
+    flex: 0.8;
+  }
+
+  /* カード */
+  .item {
+    margin-bottom: 12px;
+    min-height: 56px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .menu-btn {
+    font-size: 20px;
+  }
+
+  .level-bar {
+    width: 26px;
+    border-radius: 12px 0 0 12px;
+  }
+}
+
